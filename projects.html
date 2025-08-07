@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya - Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // This configuration tells Tailwind CSS to use the 'class' strategy for dark mode.
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Base font style */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="sticky top-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Shreya</a>
+            <nav class="hidden md:flex items-center space-x-8 text-lg">
+                <a href="index.html#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+                <a href="index.html#experience" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experience</a>
+                <a href="projects.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-bold">Projects</a>
+                <a href="index.html#skills" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Skills</a>
+                <a href="index.html#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
+                <a href="https://www.linkedin.com/in/shreya-p09" target="_blank" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </nav>
+            <div class="flex items-center space-x-2">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <i data-lucide="sun" class="dark:hidden"></i>
+                    <i data-lucide="moon" class="hidden dark:block"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                     <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="index.html#about" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">About</a>
+             <a href="index.html#experience" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Experience</a>
+             <a href="projects.html" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400 font-bold">Projects</a>
+             <a href="index.html#skills" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Skills</a>
+             <a href="index.html#contact" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a>
+             <a href="https://www.linkedin.com/in/shreya-p09" target="_blank" class="flex items-center space-x-2 py-2 hover:text-indigo-600 dark:hover:text-indigo-400">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 pt-16 pb-24">
+        <section id="projects-list" class="py-12">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">A collection of my work in machine learning, from generative AI and NLP to predictive analytics and MLOps.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Project 1: Intelligent Q&A Assistant -->
+                <div class="project-card bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col">
+                    <h2 class="text-2xl font-bold mb-3 text-indigo-600 dark:text-indigo-400">Intelligent Q&A Assistant (RAG)</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">
+                        Built a Retrieval-Augmented Generation (RAG) based Q&A assistant using FAISS for vector search and LangChain for LLM inference. This system enables underwriters to retrieve compliant summaries from financial documents with over 85% semantic match accuracy, significantly improving efficiency.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">LangChain</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">FAISS</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">LLM</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">AWS SageMaker</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Generative AI for Document Classification -->
+                <div class="project-card bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col">
+                    <h2 class="text-2xl font-bold mb-3 text-indigo-600 dark:text-indigo-400">GenAI-driven Document Classification</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">
+                        Designed and deployed a generative AI-driven NLP system for financial document classification. The system uses fine-tuned LLMs (GPT, BERT, LLaMA) to enhance fraud risk detection and document understanding across more than 10 business workflows.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">GPT</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">BERT</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">LLaMA</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Fine-Tuning</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">FastAPI</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Real-time Feedback Analytics -->
+                <div class="project-card bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col">
+                    <h2 class="text-2xl font-bold mb-3 text-indigo-600 dark:text-indigo-400">Real-time Feedback Analytics</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">
+                        Developed end-to-end text classification and intent detection pipelines using Scikit-learn, TensorFlow, and custom embeddings. This system optimized model accuracy for analyzing real-time customer feedback and sentiment.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">TensorFlow</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Scikit-learn</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">NER</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Azure</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Tableau</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Enterprise Document Mining -->
+                <div class="project-card bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col">
+                    <h2 class="text-2xl font-bold mb-3 text-indigo-600 dark:text-indigo-400">Enterprise Document Mining</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">
+                        Created NER and sentiment analysis models using SpaCy and Hugging Face Transformers, achieving a 90%+ F1 score. These models were applied in enterprise document mining and contact center analytics to extract key insights and improve customer service.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Hugging Face</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">SpaCy</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Sentiment Analysis</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full dark:bg-indigo-900 dark:text-indigo-300">PySpark</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 py-6 text-center border-t border-gray-200 dark:border-gray-700">
+        <p class="text-gray-500 dark:text-gray-400">&copy; 2024 Shreya. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // This script runs after the entire HTML document has been loaded.
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // --- Dark Mode Toggle ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement; // This is the <html> tag
+
+            // Add a click event listener to the toggle button.
+            themeToggleBtn.addEventListener('click', () => {
+                const isDark = htmlElement.classList.contains('dark');
+                if (isDark) {
+                    htmlElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            // On initial page load, check for a saved theme in local storage or OS preference.
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlElement.classList.add('dark');
+            } else {
+                htmlElement.classList.remove('dark');
+            }
+
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close the mobile menu when a navigation link inside it is clicked.
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // For anchor links on the same page, hide the menu.
+                    if (link.getAttribute('href').startsWith('index.html#')) {
+                         mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
